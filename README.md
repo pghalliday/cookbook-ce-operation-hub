@@ -1,5 +1,5 @@
-cookbook-zeromq
-===============
+cookbook-ce-operation-hub
+=========================
 
 Chef cookbook to install ce-operation-hub
 
