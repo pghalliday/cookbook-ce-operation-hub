@@ -1,7 +1,7 @@
 cookbook-ce-operation-hub
 =========================
 
-Chef cookbook to install ce-operation-hub
+Chef cookbook to install and start a ce-operation-hub instance
 
 ## Depends
 
@@ -19,7 +19,9 @@ Attributes are specified under the `ce_operation_hub` keyspace.
 
 ### default
 
-Installs ce-operation-hub
+- Installs ce-operation-hub
+- Runs npm install to get dependencies
+- Runs npm start to start the ce-front-end
 
 ## License
 Copyright (c) 2013 Peter Halliday  
