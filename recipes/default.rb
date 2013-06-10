@@ -2,23 +2,27 @@ include_recipe "nodejs"
 include_recipe "git"
 include_recipe "zeromq"
 
-bash "clone ce-operation-hub" do
-  code <<-EOH
-    git clone https://github.com/pghalliday/ce-operation-hub.git #{node[:ce_operation_hub][:installDirectory]}
-  EOH
-  not_if { ::FileTest.exists?(node[:ce_operation_hub][:installDirectory]) }
+user node[:ce_operation_hub][:user] do
 end
 
-bash "npm install" do
-  code <<-EOH
-    cd #{node[:ce_operation_hub][:installDirectory]}
-    npm install
+git "#{node[:ce_operation_hub][:destination]}" do
+  user node[:ce_operation_hub][:user]
+  repository node[:ce_operation_hub][:repository]
+  destination node[:ce_operation_hub][:destination]
+  not_if { ::FileTest.exists?(node[:ce_operation_hub][:destination]) }
+end
+
+file "#{node[:ce_operation_hub][:destination]}/config.json" do
+  owner node[:ce_operation_hub][:user]
+  content <<-EOH
+{
+  "bind-address": #{node[:ce_operation_hub][:bind_address]}
+}
   EOH
 end
 
-bash "npm start" do
+bash "start ce-operation-hub server" do
   code <<-EOH
-    cd #{node[:ce_operation_hub][:installDirectory]}
-    npm start
+    su -l #{node[:ce_operation_hub][:user]} -c "cd #{node[:ce_operation_hub][:destination]} && npm install && npm start"
   EOH
 end
