@@ -16,7 +16,9 @@ file "#{node[:ce_operation_hub][:destination]}/config.json" do
   owner node[:ce_operation_hub][:user]
   content <<-EOH
 {
-  "bind-address": "#{node[:ce_operation_hub][:bind_address]}"
+  "ce-front-end-xreply": "#{node[:ce_operation_hub][:ce_front_end_xreply]}",
+  "ce-engine-publisher": "#{node[:ce_operation_hub][:ce_engine_publisher]}",
+  "ce-engine-pull": "#{node[:ce_operation_hub][:ce_engine_pull]}"
 }
   EOH
 end

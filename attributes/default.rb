@@ -1,7 +1,9 @@
 default[:ce_operation_hub][:repository] = "https://github.com/pghalliday/ce-operation-hub.git"
 default[:ce_operation_hub][:destination] = "/opt/ce-operation-hub"
 default[:ce_operation_hub][:user] = "ce-operation-hub"
-default[:ce_operation_hub][:bind_address] = "tcp://127.0.0.1:4000"
+default[:ce_operation_hub][:ce_front_end_xreply] = "tcp://*:4000"
+default[:ce_operation_hub][:ce_engine_publisher] = "tcp://*:4001"
+default[:ce_operation_hub][:ce_engine_pull] = "tcp://*:4002"
 
 # dependency defaults
 default[:nodejs][:install_method] = "source"

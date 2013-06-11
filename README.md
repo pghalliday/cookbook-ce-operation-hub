@@ -16,7 +16,9 @@ Attributes are specified under the `ce_operation_hub` keyspace.
 - `node[:ce_operation_hub][:repository]` - the Git repository to install ce-operation-hub from (defaults to "https://github.com/pghalliday/ce-operation-hub.git")
 - `node[:ce_operation_hub][:destination]` - the directory to install ce-operation-hub to (defaults to "/opt/ce-operation-hub")
 - `node[:ce_operation_hub][:user]` - the user to install and start ce-operation-hub as (defaults to "ce-operation-hub")
-- `node[:ce_operation_hub][:bind_address]` - the address to bind the ce-operation-hub server to (defaults to "tcp://127.0.0.1:4000")
+- `node[:ce_operation_hub][:ce_front_end_xreply]` - the address to bind the ce-operation-hub to recieve and reply to operations from ce-front-end instances (defaults to "tcp://*:4000")
+- `node[:ce_operation_hub][:ce_engine_publisher]` - the address to bind the ce-operation-hub to publish operations to ce-engine instances (defaults to "tcp://*:4001")
+- `node[:ce_operation_hub][:ce_engine_pull]` - the address to bind the ce-operation-hub to pull operations results from ce-engine instances (defaults to "tcp://*:4002")
 
 ## Recipes
 
