@@ -16,7 +16,7 @@ file "#{node[:ce_operation_hub][:destination]}/config.json" do
   owner node[:ce_operation_hub][:user]
   content <<-EOH
 {
-  "bind-address": #{node[:ce_operation_hub][:bind_address]}
+  "bind-address": "#{node[:ce_operation_hub][:bind_address]}"
 }
   EOH
 end
