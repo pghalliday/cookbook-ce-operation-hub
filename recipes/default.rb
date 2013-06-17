@@ -19,7 +19,7 @@ file "#{node[:ce_operation_hub][:destination]}/config.json" do
   "ce-front-end": #{node[:ce_operation_hub][:ce_front_end]},
   "ce-engine": {
     "stream": #{node[:ce_operation_hub][:ce_engine][:stream]},
-    "status": #{node[:ce_operation_hub][:ce_engine][:result]}
+    "result": #{node[:ce_operation_hub][:ce_engine][:result]}
   }
 }
   EOH
