@@ -1,7 +1,7 @@
 default[:ce_operation_hub][:repository] = "https://github.com/pghalliday/ce-operation-hub.git"
 default[:ce_operation_hub][:destination] = "/opt/ce-operation-hub"
 default[:ce_operation_hub][:user] = "ce-operation-hub"
-default[:ce_operation_hub][:ce_front_end] = "4000"
+default[:ce_operation_hub][:ce_front_end][:submit] = "4000"
 default[:ce_operation_hub][:ce_engine][:stream] = "4001"
 default[:ce_operation_hub][:ce_engine][:result] = "4002"
 

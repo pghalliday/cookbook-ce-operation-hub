@@ -16,7 +16,9 @@ file "#{node[:ce_operation_hub][:destination]}/config.json" do
   owner node[:ce_operation_hub][:user]
   content <<-EOH
 {
-  "ce-front-end": #{node[:ce_operation_hub][:ce_front_end]},
+  "ce-front-end": {
+    "submit": #{node[:ce_operation_hub][:ce_front_end]}
+  },
   "ce-engine": {
     "stream": #{node[:ce_operation_hub][:ce_engine][:stream]},
     "result": #{node[:ce_operation_hub][:ce_engine][:result]}
