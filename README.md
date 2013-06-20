@@ -31,5 +31,5 @@ Attributes are specified under the `ce_operation_hub` keyspace.
 - Runs npm start to start the `ce-operation-hub`
 
 ## License
-Copyright (c) 2013 Peter Halliday  
+Copyright &copy; 2013 Peter Halliday  
 Licensed under the MIT license.
