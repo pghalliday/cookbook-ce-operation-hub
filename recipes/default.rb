@@ -21,7 +21,9 @@ file "#{node[:ce_operation_hub][:destination]}/config.json" do
   },
   "ce-engine": {
     "stream": #{node[:ce_operation_hub][:ce_engine][:stream]},
-    "result": #{node[:ce_operation_hub][:ce_engine][:result]}
+    "history": #{node[:ce_operation_hub][:ce_engine][:history]},
+    "result": #{node[:ce_operation_hub][:ce_engine][:result]},
+    "timeout": #{node[:ce_operation_hub][:ce_engine][:timeout]}
   }
 }
   EOH
