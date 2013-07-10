@@ -17,7 +17,7 @@ file "#{node[:ce_operation_hub][:destination]}/config.json" do
   content <<-EOH
 {
   "ce-front-end": {
-    "submit": #{node[:ce_operation_hub][:ce_front_end]}
+    "submit": #{node[:ce_operation_hub][:ce_front_end][:submit]}
   },
   "ce-engine": {
     "stream": #{node[:ce_operation_hub][:ce_engine][:stream]},
